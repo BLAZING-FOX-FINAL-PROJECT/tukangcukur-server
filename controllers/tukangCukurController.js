@@ -20,12 +20,12 @@ class tukangCukurController{
   static async getTukangCukur(req, res, next) {
     const id = req.params.id
     try {
-      res.send('haiiii')
+      res.send('tes get getTukangCukur')
     } catch(err) {
       next(err.name)
     }
   }
-ß
+
   static async putTukangCukur(req, res, next) {
     const id = req.params.id
     try {

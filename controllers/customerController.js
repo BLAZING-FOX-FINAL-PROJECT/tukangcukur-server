@@ -20,7 +20,7 @@ class customerController {
 
   static async getCustomer(req, res, next) {
     try {
-      res.send('haiiii')
+      res.send('tes get getCustomer')
     } catch(err) {
       next(err.name)
     }
