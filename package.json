@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test npx jest bin/http.js",
-    "dev": "nodemon bin/http.js -q",
+    "dev": "npx nodemon bin/http.js",
     "start": "node app.js"
   },
   "repository": {
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
   }
 }
