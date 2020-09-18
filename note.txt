@@ -1,0 +1,26 @@
+Prerequisite nya:
+1. Install Docker Enggine 
+https://docs.docker.com/engine/install/
+
+Cara menggunakan Docker,
+
+1. Build docker file di komputer kamu
+
+   ->  docker build -t local/kangcukur-server .
+
+   Ket : Perintah diaatas akan ngebuild docker images berdasarkan docker file
+
+2. Running code from container
+
+   -> docker run -p 4000:3000 -d local/kangcukur-server
+
+   ket: Perintah diatas akan ngerun di balik layar ketika kalian ngerun localhost:4000, maka dicontainer nya akan ngerun localhost 3000
+
+3. Langsung buka localhost:4000
+
+Issues:
+
+- How to fix docker: Got permission denied while trying to connect to the Docker daemon socket. 
+
+   https://www.youtube.com/watch?v=XfZvKLNXC9M#action=share
+
