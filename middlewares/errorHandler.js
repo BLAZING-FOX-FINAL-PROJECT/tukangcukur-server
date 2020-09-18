@@ -1,5 +1,5 @@
 function errorHandler(err, req, res, next) {
-  // console.log(err, '<<< ERROR HANDLER RESPONSE');
+  console.log(err, '<<< ERROR HANDLER RESPONSE');
 
   let statusCode = err.status
   let message = err.message
