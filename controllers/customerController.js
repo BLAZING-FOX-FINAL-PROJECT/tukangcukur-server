@@ -20,6 +20,7 @@ class customerController {
         nama: req.body.nama,
         alamat: req.body.alamat,
         telepon: req.body.telepon,
+        password: req.body.password,
       });
       res.status(201).json(newCustomer);
     } catch (error) {

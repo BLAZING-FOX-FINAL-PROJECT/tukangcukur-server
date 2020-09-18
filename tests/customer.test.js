@@ -12,6 +12,7 @@ describe("CUSTOMER TEST SUITE", () => {
       nama: "nama customer",
       alamat: "jl. Hacktiv no.8",
       telepon: "0812345678",
+      password: "rahasia",
       createdAt: new Date(),
       updatedAt: new Date(),
     })
@@ -68,6 +69,7 @@ describe("CUSTOMER TEST SUITE", () => {
           nama: "nama customer baru",
           alamat: "jl. Hacktiv no.9",
           telepon: "0809123456",
+          password: "rahasia",
         })
         .end((err, res) => {
           if (err) done(err);
