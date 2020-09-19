@@ -8,10 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      JenisCukur: {
+      jenisCukur: {
         type: Sequelize.STRING
       },
-      HargaCukur: {
+      hargaCukur: {
         type: Sequelize.INTEGER
       },
       createdAt: {

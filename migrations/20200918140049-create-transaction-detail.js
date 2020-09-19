@@ -14,7 +14,7 @@ module.exports = {
       VarianId: {
         type: Sequelize.INTEGER
       },
-      Jumlah: {
+      jumlah: {
         type: Sequelize.INTEGER
       },
       createdAt: {
