@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const bcrypt = require("bcryptjs");
 module.exports = (sequelize, DataTypes) => {
   class TukangCukur extends Model {
     static associate(models) {
@@ -38,6 +39,15 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    password:  {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: "Password is required",
+        },
+      },
+    },
     rating: DataTypes.INTEGER,
     status: DataTypes.BOOLEAN
   }, {
@@ -45,6 +55,9 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'TukangCukur',
   });
   TukangCukur.beforeCreate((instance,options)=>{
+    instance.telepon = instance.telepon.replace('+62','0')
+    const salt = bcrypt.genSaltSync(5);
+    instance.password = bcrypt.hashSync(instance.password, salt);
     instance.rating = 5
     instance.status = false
   })

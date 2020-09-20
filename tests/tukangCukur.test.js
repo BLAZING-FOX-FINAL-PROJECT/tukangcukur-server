@@ -13,6 +13,7 @@ describe("TUKANG CUKUR TEST SUITE", () => {
       nama: "nama tukang cukur",
       telepon: "0812345678",
       urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+      password: "rahasia",
       rating: 5,
       status: true,
       createdAt: new Date(),
@@ -73,6 +74,7 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "nama tukang cukur baru",
           telepon: "0809123456",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+          password: "rahasia",
         })
         .end((err, res) => {
           if (err) done(err);
@@ -92,6 +94,7 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "",
           telepon: "0809123456",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+          password: "rahasia",
         })
         .end((err, res) => {
           if (err) done(err);
@@ -112,6 +115,7 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "tukangcukur",
           telepon: "",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+          password: "rahasia",
           rating: 5,
           status: true,
         })
@@ -190,6 +194,7 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "nama tukang cukur baru lagi",
           telepon: "080912999",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+          password: "rahasia",
           rating: 5,
           status: true,
         })
@@ -213,12 +218,12 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "",
           telepon: "080912999",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+          password: "rahasia",
           rating: 5,
           status: true,
         })
         .end((err, res) => {
           if (err) done(err);
-          console.log(res.body);
           expect(res.status).toBe(400);
           expect(res.body).toBeInstanceOf(Object);
           expect(res.body).toHaveProperty(
@@ -236,6 +241,7 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "nama baru",
           telepon: "",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+          password: "rahasia",
           rating: 5,
           status: true,
         })
@@ -263,7 +269,6 @@ describe("TUKANG CUKUR TEST SUITE", () => {
         })
         .end((err, res) => {
           if (err) done(err);
-          console.log(res.body);
           expect(res.status).toBe(400);
           expect(res.body).toBeInstanceOf(Object);
           expect(res.body).toHaveProperty(
@@ -300,7 +305,6 @@ describe("TUKANG CUKUR TEST SUITE", () => {
         })
         .end((err, res) => {
           if (err) done(err);
-          console.log(res.body);
           expect(res.status).toBe(400);
           expect(res.body).toBeInstanceOf(Object);
           done();

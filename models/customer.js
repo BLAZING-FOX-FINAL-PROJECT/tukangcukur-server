@@ -54,6 +54,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Customer.beforeCreate((instance) => {
+    instance.telepon = instance.telepon.replace('+62','0')
     const salt = bcrypt.genSaltSync(5);
     instance.password = bcrypt.hashSync(instance.password, salt);
   });

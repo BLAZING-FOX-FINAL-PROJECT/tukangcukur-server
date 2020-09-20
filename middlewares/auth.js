@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const {TukangCukur, Customer} = require('../models')
+const {TukangCukur, Customer, Transaction} = require('../models')
 const { Op } = require("sequelize");
 
 async function authenticate(req, res, next) {
@@ -58,6 +58,7 @@ async function authorize(req, res, next) {
         }
       })
       if (transaction) next()
+      else throw err
     } else if (req.role === 'tukangcukur') {
       const transaction = await Transaction.findOne({
         where: {
@@ -68,11 +69,12 @@ async function authorize(req, res, next) {
         }
       })
       if (transaction) next()
+      else throw err
     }
   } catch (error) {
     next({
       status: 401,
-      message: "Unathorized action!"
+      message: "Unauthorized action!"
     })
   }
 }

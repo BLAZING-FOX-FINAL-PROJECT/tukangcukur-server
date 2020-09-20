@@ -17,6 +17,9 @@ module.exports = {
       urlPhoto: {
         type: Sequelize.STRING
       },
+      password: {
+        type: Sequelize.STRING
+      },
       rating: {
         type: Sequelize.INTEGER
       },

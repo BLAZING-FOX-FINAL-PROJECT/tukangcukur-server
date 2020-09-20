@@ -20,15 +20,13 @@ class tukangCukurController{
         nama,
         telepon,
         urlPhoto,
-        rating,
-        status
+        password
       } = req.body
       const newTukangCukur = await TukangCukur.create({
         nama,
         telepon,
         urlPhoto,
-        rating,
-        status
+        password
       })
       res.status(201).json(newTukangCukur);
     } catch (error) {
