@@ -7,7 +7,6 @@ const jwt = require('jsonwebtoken')
 const userToken = require('../helpers/jwt')
 
 let customer;
-let access_token_customer;
 
 describe("CUSTOMER TEST SUITE", () => {
   beforeAll((done) => {
@@ -21,7 +20,6 @@ describe("CUSTOMER TEST SUITE", () => {
     })
       .then((res) => {
         customer = res;
-        access_token_customer = userToken({id: res.id, role: 'customer'})
         done();
       })
       .catch((err) => console.log(err));
@@ -152,7 +150,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("SUCCESS, Get Spesific Customer Data by ID", (done) => {
       request(app)
         .get("/customer/" + customer.id)
-        .set({"access_token": access_token_customer})
         .end((err, res) => {
           if (err) done(err);
           expect(res.status).toBe(200);
@@ -168,7 +165,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("FAIL, Get Spesific Customer Data by ID", (done) => {
       request(app)
         .get("/customer/" + (customer.id - 1000))
-        .set({"access_token": access_token_customer})
         .end((err, res) => {
           if (err) done(err);
           expect(res.status).toBe(404);
@@ -184,7 +180,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("SUCCESS, Put Customers Data", (done) => {
       request(app)
         .put("/customer/" + customer.id)
-        .set({"access_token": access_token_customer})
         .send({
           nama: "nama customer baru lagi",
           alamat: "jl. Hacktiv no.999",
@@ -204,7 +199,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("FAIL, Put Customers Data, (Uncomplete Input Nama)", (done) => {
       request(app)
         .put("/customer/" + customer.id)
-        .set({"access_token": access_token_customer})
         .send({
           nama: "",
           alamat: "jl. Hacktiv no.999",
@@ -226,7 +220,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("FAIL, Put Customers Data, (Uncomplete Input Alamat)", (done) => {
       request(app)
         .put("/customer/" + customer.id)
-        .set({"access_token": access_token_customer})
         .send({
           nama: "nama baru",
           alamat: "",
@@ -248,7 +241,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("FAIL, Put Customers Data, (Uncomplete Input Telepon)", (done) => {
       request(app)
         .put("/customer/" + customer.id)
-        .set({"access_token": access_token_customer})
         .send({
           nama: "nama baru",
           alamat: "alamat baru",
@@ -271,7 +263,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("SUCCESS, Del customer data", (done) => {
       request(app)
         .delete("/customer/" + customer.id)
-        .set({"access_token": access_token_customer})
         .end((err, res) => {
           if (err) done(err);
           expect(res.status).toBe(200);
@@ -282,7 +273,6 @@ describe("CUSTOMER TEST SUITE", () => {
     test("FAIL, Del customer data", (done) => {
       request(app)
         .delete("/customer/" + (customer.id + 99))
-        .set({"access_token": access_token_customer})
         .end((err, res) => {
           if (err) done(err);
           expect(res.status).toBe(404);

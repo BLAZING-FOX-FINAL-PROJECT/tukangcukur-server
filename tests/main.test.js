@@ -462,12 +462,12 @@ describe("TRANSACTION TEST SUITE - GET", () => {
             jumlah: 1
             },
             {
-            jenisCukur: 'Gentleman full package',
-            jumlah: 6
+              jenisCukur: 'Potong jenggot dan kumis',
+              jumlah: 2
             },
             {
-            jenisCukur: 'Potong jenggot dan kumis',
-            jumlah: 2
+            jenisCukur: 'Gentleman full package',
+            jumlah: 6
             }
         ]
         })
