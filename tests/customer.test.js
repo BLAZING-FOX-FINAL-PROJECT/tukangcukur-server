@@ -3,6 +3,8 @@
 const app = require("../app.js");
 const request = require("supertest");
 const { Customer } = require("../models");
+const jwt = require('jsonwebtoken')
+const userToken = require('../helpers/jwt')
 
 let customer;
 

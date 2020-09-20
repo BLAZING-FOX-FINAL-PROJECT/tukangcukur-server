@@ -15,7 +15,6 @@ class customerController {
 
   static async postCustomer(req, res, next) {
     try {
-      // console.log(payload);
       const newCustomer = await Customer.create({
         nama: req.body.nama,
         alamat: req.body.alamat,

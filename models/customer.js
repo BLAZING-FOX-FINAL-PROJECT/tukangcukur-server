@@ -3,13 +3,10 @@ const { Model } = require("sequelize");
 const bcrypt = require("bcryptjs");
 module.exports = (sequelize, DataTypes) => {
   class Customer extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      Customer.belongsToMany(models.TukangCukur, {
+        through: 'Transactions'
+      })
     }
   }
   Customer.init(
@@ -57,6 +54,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Customer.beforeCreate((instance) => {
+    instance.telepon = instance.telepon.replace('+62','0')
     const salt = bcrypt.genSaltSync(5);
     instance.password = bcrypt.hashSync(instance.password, salt);
   });
