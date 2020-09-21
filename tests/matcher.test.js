@@ -83,26 +83,22 @@ describe("TRANSACTION TEST SUITE - POST WITH LARGEST DISTANCE", () => {
       truncate: true,
       cascade: true,
     })
-      .then((res) => {return
-        Varian.destroy({
+      .then((res) => {return Varian.destroy({
           truncate: true,
           cascade: true
         })
       })
-      .then((res) => {return
-        Transaction.destroy({
+      .then((res) => {return Transaction.destroy({
           truncate: true,
           cascade: true
         })
       })
-      .then((res) => {return
-        TransactionDetail.destroy({
+      .then((res) => {return TransactionDetail.destroy({
           truncate: true,
           cascade: true
         })
       })
-      .then((res) => {return
-        TukangCukur.destroy({
+      .then((res) => {return TukangCukur.destroy({
           truncate: true,
           cascade: true
         })
@@ -301,26 +297,22 @@ describe("TRANSACTION TEST SUITE - POST WITH FUNCTIONAL DISTANCE", () => {
       truncate: true,
       cascade: true,
     })
-      .then((res) => {return
-        Varian.destroy({
+      .then((res) => {return Varian.destroy({
           truncate: true,
           cascade: true
         })
       })
-      .then((res) => {return
-        Transaction.destroy({
+      .then((res) => {return Transaction.destroy({
           truncate: true,
           cascade: true
         })
       })
-      .then((res) => {return
-        TransactionDetail.destroy({
+      .then((res) => {return TransactionDetail.destroy({
           truncate: true,
           cascade: true
         })
       })
-      .then((res) => {return
-        TukangCukur.destroy({
+      .then((res) => {return TukangCukur.destroy({
           truncate: true,
           cascade: true
         })
