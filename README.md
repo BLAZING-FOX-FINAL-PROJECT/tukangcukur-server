@@ -2,29 +2,29 @@
 
 routes:
 
-https://tukangcukur.herokuapp.com/customer/ (GET)
-https://tukangcukur.herokuapp.com/customer/:id (GET)
-https://tukangcukur.herokuapp.com/customer/ (POST)
-https://tukangcukur.herokuapp.com/customer/:id (PUT)
-https://tukangcukur.herokuapp.com/customer/:id (DELETE)
+        https://tukangcukur.herokuapp.com/customer/ (GET)
+        https://tukangcukur.herokuapp.com/customer/:id (GET)
+        https://tukangcukur.herokuapp.com/customer/ (POST)
+        https://tukangcukur.herokuapp.com/customer/:id (PUT)
+        https://tukangcukur.herokuapp.com/customer/:id (DELETE)
 
-https://tukangcukur.herokuapp.com/tukangcukur/ (GET)
-https://tukangcukur.herokuapp.com/tukangcukur/:id (GET)
-https://tukangcukur.herokuapp.com/tukangcukur/ (POST)
-https://tukangcukur.herokuapp.com/tukangcukur/:id (PUT)
-https://tukangcukur.herokuapp.com/tukangcukur/:id (PATCH)
-https://tukangcukur.herokuapp.com/tukangcukur/:id (DELETE)
+        https://tukangcukur.herokuapp.com/tukangcukur/ (GET)
+        https://tukangcukur.herokuapp.com/tukangcukur/:id (GET)
+        https://tukangcukur.herokuapp.com/tukangcukur/ (POST)
+        https://tukangcukur.herokuapp.com/tukangcukur/:id (PUT)
+        https://tukangcukur.herokuapp.com/tukangcukur/:id (PATCH)
+        https://tukangcukur.herokuapp.com/tukangcukur/:id (DELETE)
 
-https://tukangcukur.herokuapp.com/verify (GET)
+        https://tukangcukur.herokuapp.com/verify (GET)
 
-https://tukangcukur.herokuapp.com/login (POST)
+        https://tukangcukur.herokuapp.com/login (POST)
 
-https://tukangcukur.herokuapp.com/transaksi/ (GET)
-https://tukangcukur.herokuapp.com/transaksi/:id (GET)
-https://tukangcukur.herokuapp.com/transaksi/ (POST)
-https://tukangcukur.herokuapp.com/transaksi/:id (PATCH)
+        https://tukangcukur.herokuapp.com/transaksi/ (GET)
+        https://tukangcukur.herokuapp.com/transaksi/:id (GET)
+        https://tukangcukur.herokuapp.com/transaksi/ (POST)
+        https://tukangcukur.herokuapp.com/transaksi/:id (PATCH)
 
-https://tukangcukur.herokuapp.com/varian (GET)
+        https://tukangcukur.herokuapp.com/varian (GET)
 
 --
 ## POST login:
