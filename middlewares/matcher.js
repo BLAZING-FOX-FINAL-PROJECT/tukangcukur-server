@@ -8,7 +8,6 @@ async function matcher(req,res,next) {
     else {
       const {customerLatitude, customerLongitude} = req.body
       const tukangCukurs = await TukangCukur.findAll({where: { status: true }})
-
       let distances = tukangCukurs.map(el => {return distance(
         customerLatitude,
         customerLongitude,
@@ -17,6 +16,7 @@ async function matcher(req,res,next) {
         el.id
       )})
       distances.sort( (dist1,dist2) => dist1.dist-dist2.dist )
+      console.log(distances, "km")
       req.TukangCukurId = distances[0].id
       next()
     }
