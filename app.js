@@ -14,10 +14,4 @@ app.use(cors());
 app.use("/", index);
 app.use(errorHandler);
 
-
-const port = process.env.PORT
-app.listen(port, ()=>{console.log(port)})
-
-
-
 module.exports = app;
