@@ -20,13 +20,17 @@ class tukangCukurController{
         nama,
         telepon,
         urlPhoto,
-        password
+        password,
+        latitude,
+        longitude
       } = req.body
       const newTukangCukur = await TukangCukur.create({
         nama,
         telepon,
         urlPhoto,
-        password
+        password,
+        latitude,
+        longitude
       })
       res.status(201).json(newTukangCukur);
     } catch (error) {
@@ -60,12 +64,16 @@ class tukangCukurController{
         nama,
         telepon,
         urlPhoto,
+        latitude,
+        longitude
       } = req.body
       const tukangCukur = await TukangCukur.update(
         {
           nama,
           telepon,
           urlPhoto,
+          latitude,
+          longitude
         },
         {
           where: { id },

@@ -14,8 +14,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
       telepon: "0812345678",
       urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
       password: "rahasia",
-      rating: 5,
-      status: true,
+      latitude: -7.575489,
+      longitude: 110.824326,
       createdAt: new Date(),
       updatedAt: new Date(),
     })
@@ -44,12 +44,13 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           if (err) done(err);
           expect(res.status).toBe(200);
           expect(res.body).toBeInstanceOf(Array);
-          expect(res.body[0]).toHaveProperty("id");
-          expect(res.body[0]).toHaveProperty("nama", "nama tukang cukur");
-          expect(res.body[0]).toHaveProperty("telepon", "0812345678");
-          expect(res.body[0]).toHaveProperty("urlPhoto", "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg");
-          expect(res.body[0]).toHaveProperty("rating", 5);
-          expect(res.body[0]).toHaveProperty("status", false);
+          expect(res.body[0]).toHaveProperty("nama");
+          expect(res.body[0]).toHaveProperty("telepon");
+          expect(res.body[0]).toHaveProperty("urlPhoto");
+          expect(res.body[0]).toHaveProperty("latitude");
+          expect(res.body[0]).toHaveProperty("longitude");
+          expect(res.body[0]).toHaveProperty("rating");
+          expect(res.body[0]).toHaveProperty("status");
           done();
         });
     });
@@ -75,6 +76,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           telepon: "0809123456",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
+          latitude: -7.575489,
+          longitude: 110.824326
         })
         .end((err, res) => {
           if (err) done(err);
@@ -83,6 +86,10 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           expect(res.body).toHaveProperty("nama", "nama tukang cukur baru");
           expect(res.body).toHaveProperty("telepon", "0809123456");
           expect(res.body).toHaveProperty("urlPhoto", "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg");
+          expect(res.body).toHaveProperty("latitude", -7.575489);
+          expect(res.body).toHaveProperty("longitude", 110.824326);
+          expect(res.body).toHaveProperty("rating", 5);
+          expect(res.body).toHaveProperty("status", false);
           done();
         });
     });
@@ -95,6 +102,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           telepon: "0809123456",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
+          latitude: -7.575489,
+          longitude: 110.824326
         })
         .end((err, res) => {
           if (err) done(err);
@@ -116,8 +125,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           telepon: "",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
-          rating: 5,
-          status: true,
+          latitude: -7.575489,
+          longitude: 110.824326
         })
         .end((err, res) => {
           if (err) done(err);
@@ -139,8 +148,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "tukangcukur",
           telepon: "0809123456",
           urlPhoto: "",
-          rating: 5,
-          status: true,
+          latitude: -7.575489,
+          longitude: 110.824326
         })
         .end((err, res) => {
           if (err) done(err);
@@ -168,6 +177,10 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           expect(res.body).toHaveProperty("nama", "nama tukang cukur");
           expect(res.body).toHaveProperty("telepon", "0812345678");
           expect(res.body).toHaveProperty("urlPhoto", "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg");
+          expect(res.body).toHaveProperty("latitude", -7.575489);
+          expect(res.body).toHaveProperty("longitude", 110.824326);
+          expect(res.body).toHaveProperty("rating", 5);
+          expect(res.body).toHaveProperty("status", false);
           done();
         });
     });
@@ -194,9 +207,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "nama tukang cukur baru lagi",
           telepon: "080912999",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
-          password: "rahasia",
-          rating: 5,
-          status: true,
+          latitude: -7.575490,
+          longitude: 110.824325
         })
         .end((err, res) => {
           if (err) done(err);
@@ -207,6 +219,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           expect(res.body).toHaveProperty("urlPhoto", "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg");
           expect(res.body).toHaveProperty("rating", 5);
           expect(res.body).toHaveProperty("status", false);
+          expect(res.body).toHaveProperty("latitude", -7.575490);
+          expect(res.body).toHaveProperty("longitude", 110.824325);
           done();
         });
     });
@@ -218,9 +232,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "",
           telepon: "080912999",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
-          password: "rahasia",
-          rating: 5,
-          status: true,
+          latitude: -7.575490,
+          longitude: 110.824325
         })
         .end((err, res) => {
           if (err) done(err);
@@ -241,9 +254,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "nama baru",
           telepon: "",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
-          password: "rahasia",
-          rating: 5,
-          status: true,
+          latitude: -7.575490,
+          longitude: 110.824325
         })
         .end((err, res) => {
           if (err) done(err);
@@ -264,8 +276,8 @@ describe("TUKANG CUKUR TEST SUITE", () => {
           nama: "nama baru",
           telepon: "080912999",
           urlPhoto: "",
-          rating: 5,
-          status: true,
+          latitude: -7.575490,
+          longitude: 110.824325
         })
         .end((err, res) => {
           if (err) done(err);

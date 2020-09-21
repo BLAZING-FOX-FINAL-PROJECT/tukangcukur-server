@@ -27,6 +27,8 @@ describe("LOGIN TEST SUITE", () => {
           telepon: "+62812345678",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
+          latitude: -7.575489,
+          longitude: 110.824326,
           createdAt: new Date(),
           updatedAt: new Date(),
         })
@@ -194,6 +196,8 @@ describe("MAIN APP TOKEN VERIVIER TEST SUITE", () => {
           telepon: "0812345678",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
+          latitude: -7.575489,
+          longitude: 110.824326,
           createdAt: new Date(),
           updatedAt: new Date(),
         })
@@ -406,6 +410,8 @@ describe("TRANSACTION TEST SUITE - GET", () => {
           telepon: "+62812345678",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
+          latitude: -7.575489,
+          longitude: 110.824326,
           createdAt: new Date(),
           updatedAt: new Date(),
         })
@@ -497,58 +503,58 @@ describe("TRANSACTION TEST SUITE - GET", () => {
               expect(res.status).toBe(200);
               expect(res.body).toBeInstanceOf(Array);
               expect(res.body[0]).toHaveProperty("CustomerId", jwt.verify(access_token_customer, process.env.JWT_SECRET).id)
-              expect(res.body[0]).toHaveProperty("TukangCukurId", 3)
-              expect(res.body[0]).toHaveProperty("status", "ongoing")
+              expect(res.body[0]).toHaveProperty("TukangCukurId")
+              expect(res.body[0]).toHaveProperty("status")
               expect(res.body[0]).toHaveProperty("TransactionDetails")
               expect(res.body[0].TransactionDetails).toBeInstanceOf(Array);
               expect(res.body[0].TransactionDetails[0]).toHaveProperty("TransactionId")
-              expect(res.body[0].TransactionDetails[0]).toHaveProperty("VarianId", 1)
-              expect(res.body[0].TransactionDetails[0]).toHaveProperty("jumlah", 3)
+              expect(res.body[0].TransactionDetails[0]).toHaveProperty("VarianId")
+              expect(res.body[0].TransactionDetails[0]).toHaveProperty("jumlah")
               expect(res.body[0].TransactionDetails[0]).toHaveProperty("Varian")
-              expect(res.body[0].TransactionDetails[0].Varian).toHaveProperty("id" ,1)
-              expect(res.body[0].TransactionDetails[0].Varian).toHaveProperty("jenisCukur", "Potong rambut pria")
-              expect(res.body[0].TransactionDetails[0].Varian).toHaveProperty("hargaCukur", 60000)
+              expect(res.body[0].TransactionDetails[0].Varian).toHaveProperty("id")
+              expect(res.body[0].TransactionDetails[0].Varian).toHaveProperty("jenisCukur")
+              expect(res.body[0].TransactionDetails[0].Varian).toHaveProperty("hargaCukur")
               expect(res.body[0].TransactionDetails[1]).toHaveProperty("TransactionId")
-              expect(res.body[0].TransactionDetails[1]).toHaveProperty("VarianId", 2)
-              expect(res.body[0].TransactionDetails[1]).toHaveProperty("jumlah", 1)
+              expect(res.body[0].TransactionDetails[1]).toHaveProperty("VarianId")
+              expect(res.body[0].TransactionDetails[1]).toHaveProperty("jumlah")
               expect(res.body[0].TransactionDetails[1]).toHaveProperty("Varian")
-              expect(res.body[0].TransactionDetails[1].Varian).toHaveProperty("id", 2)
-              expect(res.body[0].TransactionDetails[1].Varian).toHaveProperty("jenisCukur", "Potong rambut anak")
-              expect(res.body[0].TransactionDetails[1].Varian).toHaveProperty("hargaCukur", 30000)
+              expect(res.body[0].TransactionDetails[1].Varian).toHaveProperty("id")
+              expect(res.body[0].TransactionDetails[1].Varian).toHaveProperty("jenisCukur")
+              expect(res.body[0].TransactionDetails[1].Varian).toHaveProperty("hargaCukur")
               expect(res.body[0].TransactionDetails[2]).toHaveProperty("TransactionId")
-              expect(res.body[0].TransactionDetails[2]).toHaveProperty("VarianId", 3)
-              expect(res.body[0].TransactionDetails[2]).toHaveProperty("jumlah", 2)
+              expect(res.body[0].TransactionDetails[2]).toHaveProperty("VarianId")
+              expect(res.body[0].TransactionDetails[2]).toHaveProperty("jumlah")
               expect(res.body[0].TransactionDetails[2]).toHaveProperty("Varian")
-              expect(res.body[0].TransactionDetails[2].Varian).toHaveProperty("id", 3)
-              expect(res.body[0].TransactionDetails[2].Varian).toHaveProperty("jenisCukur", "Potong jenggot dan kumis")
-              expect(res.body[0].TransactionDetails[2].Varian).toHaveProperty("hargaCukur", 25000)
+              expect(res.body[0].TransactionDetails[2].Varian).toHaveProperty("id")
+              expect(res.body[0].TransactionDetails[2].Varian).toHaveProperty("jenisCukur")
+              expect(res.body[0].TransactionDetails[2].Varian).toHaveProperty("hargaCukur")
               expect(res.body[0].TransactionDetails[3]).toHaveProperty("TransactionId")
-              expect(res.body[0].TransactionDetails[3]).toHaveProperty("VarianId", 6)
-              expect(res.body[0].TransactionDetails[3]).toHaveProperty("jumlah", 6)
+              expect(res.body[0].TransactionDetails[3]).toHaveProperty("VarianId")
+              expect(res.body[0].TransactionDetails[3]).toHaveProperty("jumlah")
               expect(res.body[0].TransactionDetails[3]).toHaveProperty("Varian")
-              expect(res.body[0].TransactionDetails[3].Varian).toHaveProperty("id", 6)
-              expect(res.body[0].TransactionDetails[3].Varian).toHaveProperty("jenisCukur", "Gentleman full package")
-              expect(res.body[0].TransactionDetails[3].Varian).toHaveProperty("hargaCukur", 200000)
+              expect(res.body[0].TransactionDetails[3].Varian).toHaveProperty("id")
+              expect(res.body[0].TransactionDetails[3].Varian).toHaveProperty("jenisCukur")
+              expect(res.body[0].TransactionDetails[3].Varian).toHaveProperty("hargaCukur")
 
               expect(res.body[1]).toHaveProperty("CustomerId", jwt.verify(access_token_customer, process.env.JWT_SECRET).id)
-              expect(res.body[1]).toHaveProperty("TukangCukurId", 5)
-              expect(res.body[1]).toHaveProperty("status", "ongoing")
+              expect(res.body[1]).toHaveProperty("TukangCukurId")
+              expect(res.body[1]).toHaveProperty("status")
               expect(res.body[1]).toHaveProperty("TransactionDetails")
               expect(res.body[1].TransactionDetails).toBeInstanceOf(Array);
               expect(res.body[1].TransactionDetails[0]).toHaveProperty("TransactionId")
-              expect(res.body[1].TransactionDetails[0]).toHaveProperty("VarianId", 1)
-              expect(res.body[1].TransactionDetails[0]).toHaveProperty("jumlah", 2)
+              expect(res.body[1].TransactionDetails[0]).toHaveProperty("VarianId")
+              expect(res.body[1].TransactionDetails[0]).toHaveProperty("jumlah")
               expect(res.body[1].TransactionDetails[0]).toHaveProperty("Varian")
-              expect(res.body[1].TransactionDetails[0].Varian).toHaveProperty("id" ,1)
-              expect(res.body[1].TransactionDetails[0].Varian).toHaveProperty("jenisCukur", "Potong rambut pria")
-              expect(res.body[1].TransactionDetails[0].Varian).toHaveProperty("hargaCukur", 60000)
+              expect(res.body[1].TransactionDetails[0].Varian).toHaveProperty("id")
+              expect(res.body[1].TransactionDetails[0].Varian).toHaveProperty("jenisCukur")
+              expect(res.body[1].TransactionDetails[0].Varian).toHaveProperty("hargaCukur")
               expect(res.body[1].TransactionDetails[1]).toHaveProperty("TransactionId")
-              expect(res.body[1].TransactionDetails[1]).toHaveProperty("VarianId", 6)
-              expect(res.body[1].TransactionDetails[1]).toHaveProperty("jumlah", 5)
+              expect(res.body[1].TransactionDetails[1]).toHaveProperty("VarianId")
+              expect(res.body[1].TransactionDetails[1]).toHaveProperty("jumlah")
               expect(res.body[1].TransactionDetails[1]).toHaveProperty("Varian")
-              expect(res.body[1].TransactionDetails[1].Varian).toHaveProperty("id", 6)
-              expect(res.body[1].TransactionDetails[1].Varian).toHaveProperty("jenisCukur", "Gentleman full package")
-              expect(res.body[1].TransactionDetails[1].Varian).toHaveProperty("hargaCukur", 200000)
+              expect(res.body[1].TransactionDetails[1].Varian).toHaveProperty("id")
+              expect(res.body[1].TransactionDetails[1].Varian).toHaveProperty("jenisCukur")
+              expect(res.body[1].TransactionDetails[1].Varian).toHaveProperty("hargaCukur")
               done()
             });
         });
@@ -746,6 +752,8 @@ describe("TRANSACTION TEST SUITE - GET By ID", () => {
           telepon: "+62812345678",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
+          latitude: -7.575489,
+          longitude: 110.824326,
           createdAt: new Date(),
           updatedAt: new Date(),
         })
@@ -1187,39 +1195,6 @@ describe("TRANSACTION TEST SUITE - POST", () => {
         });
     });
 
-    test("FAIL, Post new transaksi with invalid 'TukangCukurId'", (done) => {
-      request(app)
-        .post("/transaksi")
-        .set({"access_token": access_token_customer})
-        .send({
-          servis: [
-            {
-            jenisCukur: 'Potong rambut pria',
-            jumlah: 1
-            },
-            {
-            jenisCukur: 'Potong rambut anak',
-            jumlah: 1
-            },
-            {
-            jenisCukur: 'Gentleman full package',
-            jumlah: 6
-            },
-            {
-            jenisCukur: 'Potong jenggot dan kumis',
-            jumlah: 2
-            }
-        ]
-        })
-        .end((err, res) => {
-          if (err) done(err);
-          expect(res.status).toBe(400);
-          expect(res.body).toBeInstanceOf(Object);
-          expect(res.body).toHaveProperty("message", "TukangCukurId missing")
-          done();
-        });
-    });
-
     test("FAIL, Post new transaksi with no servis info", (done) => {
       request(app)
         .post("/transaksi")
@@ -1295,6 +1270,8 @@ describe("TRANSACTION TEST SUITE - PATCH", () => {
           telepon: "0812345678",
           urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
           password: "rahasia",
+          latitude: -7.575489,
+          longitude: 110.824326,
           createdAt: new Date(),
           updatedAt: new Date(),
         })

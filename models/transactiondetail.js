@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   TransactionDetail.init({
     TransactionId: DataTypes.INTEGER,
     VarianId: DataTypes.INTEGER,
+    hargaKetikaOrder: DataTypes.INTEGER,
     jumlah: DataTypes.INTEGER
   }, {
     sequelize,
