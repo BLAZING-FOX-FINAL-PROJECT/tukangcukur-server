@@ -129,7 +129,7 @@ class MainController {
 
   static async postTransaksi(req,res,next) {
     // req.body: {customerLatitude, customerLongitude, servis: [{jenisCukur: 'string', hargaCukur: int, jumlah: int}]}
-    // req.tukangCukurId - OPTIONAL if without long/lat
+    // req.body.tukangCukurId - OPTIONAL if without long/lat
     try {
       const {servis} = req.body
       const TukangCukurId = req.body.TukangCukurId || req.TukangCukurId
