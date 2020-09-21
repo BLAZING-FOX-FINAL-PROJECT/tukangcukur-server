@@ -14,10 +14,10 @@ app.use(cors());
 app.use("/", index);
 app.use(errorHandler);
 
-if (process.env.NODE_ENV === "production") {
-  const port = process.env.PORT
-  app.listen(port, ()=>{console.log(port)})
-}
+
+const port = process.env.PORT
+app.listen(port, ()=>{console.log(port)})
+
 
 
 module.exports = app;
