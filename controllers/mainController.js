@@ -7,7 +7,6 @@ const {comparePassword} = require('../helpers/hashPassword')
 // -Checking token owner, (checking its role) and sending role to client
 // -Creating the transactions form and complete with its status and Detail(Type, Price, Amount)
 
-
 class MainController {
   // login
   static async login(req,res,next) {
@@ -75,39 +74,7 @@ class MainController {
   }
   // Getting Variant Menu ends
 
-
   // Transactions
-  // router.get('/', authenticate, MainController.getTransaksi)
-  // router.get('/:id', authenticate, MainController.getTransaksiById)
-
-  static async getTransaksi(req, res, next) {
-    try {
-      const id = req.access_id
-      let transaction
-      if (req.role === 'customer') {
-        transaction = await Transaction.findAll({
-          where: { CustomerId: id },
-          include:{
-            model: TransactionDetail,
-            include: Varian
-        }})
-      }
-      else if (req.role === 'tukangcukur') {
-        transaction = await Transaction.findAll({
-          where: { TukangCukurId: id },
-          include:{
-            model: TransactionDetail,
-            include: Varian
-        }})
-      }
-      res.status(200).json(transaction)
-    } catch(error) {
-      next({
-        status: 500,
-        message: "Internal server error"
-      });
-    }
-  }
   static async getTransaksi(req, res, next) {
     try {
       const id = req.access_id
@@ -116,21 +83,21 @@ class MainController {
         transaction = await Transaction.findAll({
           where: { CustomerId: id },
           order: [['createdAt','ASC']],
-          include:{
+          include:[Customer, TukangCukur,{
             model: TransactionDetail,
             order: [['VarianId','ASC']],
             include: Varian
-        }})
+        }]})
       }
       else if (req.role === 'tukangcukur') {
         transaction = await Transaction.findAll({
           where: { TukangCukurId: id },
           order: [['createdAt','ASC']],
-          include:{
+          include:[Customer, TukangCukur,{
             model: TransactionDetail,
             order: [['VarianId','ASC']],
             include: Varian
-        }})
+        }]})
       }
       res.status(200).json(transaction)
     } catch(error) {
@@ -146,11 +113,11 @@ class MainController {
       const id = req.params.id
       const transaction = await Transaction.findOne({
         where: { id },
-        include:{
+        include:[Customer, TukangCukur,{
           model: TransactionDetail,
           order: [['VarianId','ASC']],
           include: Varian
-      }})
+      }]})
       res.status(200).json(transaction)
     } catch(error) {
       next({
@@ -161,18 +128,11 @@ class MainController {
   }
 
   static async postTransaksi(req,res,next) {
-    // req.body: {TukangCukurId: int, servis: [{jenisCukur: 'string', hargaCukur: int, jumlah: int}]}
+    // req.body: {customerLatitude, customerLongitude, servis: [{jenisCukur: 'string', hargaCukur: int, jumlah: int}]}
+    // req.tukangCukurId - OPTIONAL if without long/lat
     try {
-      const {
-        TukangCukurId,
-        servis
-      } = req.body
-      if (!TukangCukurId) {
-        next({
-          status: 400,
-          message: "TukangCukurId missing"
-        });
-      }
+      const {servis} = req.body
+      const TukangCukurId = req.body.TukangCukurId || req.TukangCukurId
       if (!servis || !servis.length) {
         next({
           status: 400,
@@ -202,10 +162,19 @@ class MainController {
       const detail = servis.map(el=>{return {
         TransactionId: transaction.id,
         VarianId: varian.filter(vari=>{return vari.jenisCukur === el.jenisCukur})[0].id,
+        hargaKetikaOrder: varian.filter(vari=>{return vari.jenisCukur === el.jenisCukur})[0].hargaCukur,
         jumlah: el.jumlah
       }})
       const transactionDetail = await TransactionDetail.bulkCreate(detail)
-      res.status(201).json(transaction)
+      const tukangCukurStatus = await TukangCukur.update({status: false},{where: {id: TukangCukurId}})
+      const updatedTransaction = await Transaction.findOne({
+        where: { id: transaction.id },
+        include:[Customer, TukangCukur,{
+          model: TransactionDetail,
+          order: [['VarianId','ASC']],
+          include: Varian
+      }]})
+      res.status(201).json(updatedTransaction)
     } catch (error) {
       next({
         status: 500,

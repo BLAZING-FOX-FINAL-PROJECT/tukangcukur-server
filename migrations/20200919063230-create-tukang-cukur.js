@@ -26,6 +26,12 @@ module.exports = {
       status: {
         type: Sequelize.BOOLEAN
       },
+      latitude: {
+        type: Sequelize.DOUBLE
+      },
+      longitude: {
+        type: Sequelize.DOUBLE
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

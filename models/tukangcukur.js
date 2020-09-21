@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, Sequelize
 } = require('sequelize');
 const bcrypt = require("bcryptjs");
 module.exports = (sequelize, DataTypes) => {
@@ -48,6 +48,8 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    latitude: DataTypes.DOUBLE,
+    longitude: DataTypes.DOUBLE,
     rating: DataTypes.INTEGER,
     status: DataTypes.BOOLEAN
   }, {

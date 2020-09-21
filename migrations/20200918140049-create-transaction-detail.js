@@ -14,6 +14,9 @@ module.exports = {
       VarianId: {
         type: Sequelize.INTEGER
       },
+      hargaKetikaOrder: {
+        type: Sequelize.INTEGER
+      },
       jumlah: {
         type: Sequelize.INTEGER
       },
