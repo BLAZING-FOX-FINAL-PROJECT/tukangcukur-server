@@ -7,7 +7,6 @@ const {comparePassword} = require('../helpers/hashPassword')
 // -Checking token owner, (checking its role) and sending role to client
 // -Creating the transactions form and complete with its status and Detail(Type, Price, Amount)
 
-
 class MainController {
   // login
   static async login(req,res,next) {
