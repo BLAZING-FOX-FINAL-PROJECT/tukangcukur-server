@@ -185,16 +185,12 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
           CustomerId: 308,
           TukangCukurId: 5,
           status: 'ongoing',
-          createdAt: '2020-09-21T13:27:45.250Z',
-          updatedAt: '2020-09-21T13:27:45.250Z',
           Customer: {
             id: 308,
             nama: 'nama customer',
             alamat: 'jl. Hacktiv no.8',
             telepon: '0812345678',
             password: '$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee',
-            createdAt: '2020-09-21T13:27:44.960Z',
-            updatedAt: '2020-09-21T13:27:44.960Z'
           },
           TukangCukur: {
               nama: "tukang cukur jakarta",
@@ -203,8 +199,6 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
               password: "$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee",
               latitude: -6.175110,
               longitude: 106.865036,
-              createdAt: "2020-09-21T13:27:45.250Z",
-              updatedAt: "2020-09-21T13:27:45.250Z"
             }
           TransactionDetails: [
             {
@@ -213,8 +207,6 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
               VarianId: 1,
               hargaKetikaOrder: 60000
               jumlah: 2,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Potong rambut pria", hargaCukur: 60000}]
             },
             {
@@ -223,8 +215,6 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
               VarianId: 6,
               hargaKetikaOrder: 200000
               jumlah: 5,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Gentleman full package", hargaCukur: 200000}]
             }
           ]
@@ -233,16 +223,12 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
           CustomerId: 308,
           TukangCukurId: 5,
           status: 'ongoing',
-          createdAt: '2020-09-21T13:27:45.250Z',
-          updatedAt: '2020-09-21T13:27:45.250Z',
           Customer: {
             id: 308,
             nama: 'nama customer',
             alamat: 'jl. Hacktiv no.8',
             telepon: '0812345678',
             password: '$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee',
-            createdAt: '2020-09-21T13:27:44.960Z',
-            updatedAt: '2020-09-21T13:27:44.960Z'
           },
           TukangCukur: {
               nama: "tukang cukur jakarta",
@@ -251,8 +237,6 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
               password: "$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee",
               latitude: -6.175110,
               longitude: 106.865036,
-              createdAt: "2020-09-21T13:27:45.250Z",
-              updatedAt: "2020-09-21T13:27:45.250Z"
             }
           TransactionDetails: [
             {
@@ -261,8 +245,6 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
               VarianId: 1,
               hargaKetikaOrder: 60000
               jumlah: 2,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Potong rambut pria", hargaCukur: 60000}]
             },
             {
@@ -271,8 +253,6 @@ mendapatkan keseluruhan transaksi sesuai dgn kepemilikan access_token (customer 
               VarianId: 6,
               hargaKetikaOrder: 200000
               jumlah: 5,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Gentleman full package", hargaCukur: 200000}]
             }
           ]
@@ -316,16 +296,12 @@ mendapatkan transaksi by id namun tetap sesuai dgn kepemilikan access_token (cus
           CustomerId: 308,
           TukangCukurId: 5,
           status: 'ongoing',
-          createdAt: '2020-09-21T13:27:45.250Z',
-          updatedAt: '2020-09-21T13:27:45.250Z',
           Customer: {
             id: 308,
             nama: 'nama customer',
             alamat: 'jl. Hacktiv no.8',
             telepon: '0812345678',
             password: '$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee',
-            createdAt: '2020-09-21T13:27:44.960Z',
-            updatedAt: '2020-09-21T13:27:44.960Z'
           },
           TukangCukur: {
               nama: "tukang cukur jakarta",
@@ -334,8 +310,6 @@ mendapatkan transaksi by id namun tetap sesuai dgn kepemilikan access_token (cus
               password: "$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee",
               latitude: -6.175110,
               longitude: 106.865036,
-              createdAt: "2020-09-21T13:27:45.250Z",
-              updatedAt: "2020-09-21T13:27:45.250Z"
             }
           TransactionDetails: [
             {
@@ -344,8 +318,6 @@ mendapatkan transaksi by id namun tetap sesuai dgn kepemilikan access_token (cus
               VarianId: 1,
               hargaKetikaOrder: 60000
               jumlah: 2,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Potong rambut pria", hargaCukur: 60000}]
             },
             {
@@ -354,8 +326,6 @@ mendapatkan transaksi by id namun tetap sesuai dgn kepemilikan access_token (cus
               VarianId: 6,
               hargaKetikaOrder: 200000
               jumlah: 5,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Gentleman full package", hargaCukur: 200000}]
             }
           ]
@@ -417,16 +387,12 @@ membuat transaksi dengan customer dan kangCukur terdekat dan dilengkapi dgn kepe
           CustomerId: 308,
           TukangCukurId: 5,
           status: 'ongoing',
-          createdAt: '2020-09-21T13:27:45.250Z',
-          updatedAt: '2020-09-21T13:27:45.250Z',
           Customer: {
             id: 308,
             nama: 'nama customer',
             alamat: 'jl. Hacktiv no.8',
             telepon: '0812345678',
             password: '$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee',
-            createdAt: '2020-09-21T13:27:44.960Z',
-            updatedAt: '2020-09-21T13:27:44.960Z'
           },
           TukangCukur: {
               nama: "tukang cukur jakarta",
@@ -435,8 +401,6 @@ membuat transaksi dengan customer dan kangCukur terdekat dan dilengkapi dgn kepe
               password: "$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee",
               latitude: -6.175110,
               longitude: 106.865036,
-              createdAt: "2020-09-21T13:27:45.250Z",
-              updatedAt: "2020-09-21T13:27:45.250Z"
             }
           TransactionDetails: [
             {
@@ -445,8 +409,6 @@ membuat transaksi dengan customer dan kangCukur terdekat dan dilengkapi dgn kepe
               VarianId: 1,
               hargaKetikaOrder: 60000
               jumlah: 2,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Potong rambut pria", hargaCukur: 60000}]
             },
             {
@@ -455,8 +417,6 @@ membuat transaksi dengan customer dan kangCukur terdekat dan dilengkapi dgn kepe
               VarianId: 6,
               hargaKetikaOrder: 200000
               jumlah: 5,
-              createdAt: '2020-09-21T13:27:45.307Z',
-              updatedAt: '2020-09-21T13:27:45.307Z',
               Varian: [{jenisCukur: "Gentleman full package", hargaCukur: 200000}]
             }
           ]
