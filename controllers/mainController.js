@@ -80,34 +80,34 @@ class MainController {
   // router.get('/', authenticate, MainController.getTransaksi)
   // router.get('/:id', authenticate, MainController.getTransaksiById)
 
-  static async getTransaksi(req, res, next) {
-    try {
-      const id = req.access_id
-      let transaction
-      if (req.role === 'customer') {
-        transaction = await Transaction.findAll({
-          where: { CustomerId: id },
-          include:{
-            model: TransactionDetail,
-            include: Varian
-        }})
-      }
-      else if (req.role === 'tukangcukur') {
-        transaction = await Transaction.findAll({
-          where: { TukangCukurId: id },
-          include:{
-            model: TransactionDetail,
-            include: Varian
-        }})
-      }
-      res.status(200).json(transaction)
-    } catch(error) {
-      next({
-        status: 500,
-        message: "Internal server error"
-      });
-    }
-  }
+  // static async getTransaksi(req, res, next) {
+  //   try {
+  //     const id = req.access_id
+  //     let transaction
+  //     if (req.role === 'customer') {
+  //       transaction = await Transaction.findAll({
+  //         where: { CustomerId: id },
+  //         include:{
+  //           model: TransactionDetail,
+  //           include: Varian
+  //       }})
+  //     }
+  //     else if (req.role === 'tukangcukur') {
+  //       transaction = await Transaction.findAll({
+  //         where: { TukangCukurId: id },
+  //         include:{
+  //           model: TransactionDetail,
+  //           include: Varian
+  //       }})
+  //     }
+  //     res.status(200).json(transaction)
+  //   } catch(error) {
+  //     next({
+  //       status: 500,
+  //       message: "Internal server error"
+  //     });
+  //   }
+  // }
   static async getTransaksi(req, res, next) {
     try {
       const id = req.access_id
