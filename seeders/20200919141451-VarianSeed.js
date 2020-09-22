@@ -11,3 +11,5 @@ module.exports = {
     await queryInterface.bulkDelete('Varians', null, {});
   }
 };
+
+// module.exports = require ()
