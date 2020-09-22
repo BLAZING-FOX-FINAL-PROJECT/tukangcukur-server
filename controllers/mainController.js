@@ -127,6 +127,25 @@ class MainController {
     }
   }
 
+  static async getOngoingTransaksi(req, res, next) {
+    try {
+      //findOne || findAll?
+      const transaction = await Transaction.findOne({
+        where: { status:'ongoing' },
+        include:[Customer, TukangCukur,{
+          model: TransactionDetail,
+          order: [['VarianId','ASC']],
+          include: Varian
+      }]})
+      res.status(200).json(transaction)
+    } catch(error) {
+      next({
+        status: 500,
+        message: "Internal server error"
+      });
+    }
+  }
+
   static async postTransaksi(req,res,next) {
     // req.body: {customerLatitude, customerLongitude, servis: [{jenisCukur: 'string', hargaCukur: int, jumlah: int}]}
     // req.body.tukangCukurId - OPTIONAL if without long/lat
