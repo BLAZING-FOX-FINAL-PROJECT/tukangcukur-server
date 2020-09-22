@@ -14,6 +14,12 @@ module.exports = {
       TukangCukurId: {
         type: Sequelize.INTEGER
       },
+      customerLatitude: {
+        type: Sequelize.DOUBLE
+      },
+      customerLongitude: {
+        type: Sequelize.DOUBLE
+      },
       status: {
         type: Sequelize.STRING
       },

@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   Transaction.init({
     CustomerId: DataTypes.INTEGER,
     TukangCukurId: DataTypes.INTEGER,
+    customerLatitude: DataTypes.DOUBLE,
+    customerLongitude: DataTypes.DOUBLE,
     status: DataTypes.STRING
   }, {
     sequelize,

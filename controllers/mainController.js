@@ -150,7 +150,7 @@ class MainController {
     // req.body: {customerLatitude, customerLongitude, servis: [{jenisCukur: 'string', hargaCukur: int, jumlah: int}]}
     // req.body.tukangCukurId - OPTIONAL if without long/lat
     try {
-      const {servis} = req.body
+      const {servis, customerLatitude, customerLongitude} = req.body
       const TukangCukurId = req.body.TukangCukurId || req.TukangCukurId
       if (!servis || !servis.length) {
         next({
@@ -169,6 +169,8 @@ class MainController {
       const transaction = await Transaction.create({
         CustomerId: req.access_id,
         TukangCukurId,
+        customerLatitude,
+        customerLongitude,
         status: 'ongoing'
       })
       const varian = await Varian.findAll()
