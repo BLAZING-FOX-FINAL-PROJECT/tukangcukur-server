@@ -32,7 +32,7 @@ login yang bisa digunakan untuk baik customer maupun kangCukur
 
 * URL:
 
-        /login
+        /login/:role
 
 * Method:
 
@@ -40,7 +40,7 @@ login yang bisa digunakan untuk baik customer maupun kangCukur
 
 * URL Params:
 
-        None
+        role='customer'/'tukangcukur'
 
 * Data Params:
 
