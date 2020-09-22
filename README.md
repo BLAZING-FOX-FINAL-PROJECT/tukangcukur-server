@@ -340,6 +340,80 @@ mendapatkan transaksi by id namun tetap sesuai dgn kepemilikan access_token (cus
         Content: { message : "Internal error" }
 
 
+## GET ongoing transaksi:
+mendapatkan transaksi yang sedang berjalan agar mencegah terjadinya REORDER, namun tetap sesuai dgn kepemilikan access_token (customer maupun kangCukur)
+
+* URL:
+
+        /transaksi/ongoing
+
+* Method:
+
+        GET
+
+* URL Params:
+
+        None
+
+* Data Params:
+
+        Required:
+        Headers:
+        access_token=string
+
+* Success Response:
+
+        Code: 200 OK
+        Content: {
+          id: 519,
+          CustomerId: 308,
+          TukangCukurId: 5,
+          status: 'ongoing',
+          Customer: {
+            id: 308,
+            nama: 'nama customer',
+            alamat: 'jl. Hacktiv no.8',
+            telepon: '0812345678',
+            password: '$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee',
+          },
+          TukangCukur: {
+              nama: "tukang cukur jakarta",
+              telepon: "+62812345678",
+              urlPhoto: "https://m.media-amazon.com/images/M/MV5BODdkMDQzMzItZDc4YS00OGM4LTkxNTQtNjUzNzU0ZmJkMWY2XkEyXkFqcGdeQXVyMjMxOTE0ODA@.jpg",
+              password: "$2a$05$pJKaQf21ba88qHStVJCZyOb47f4QyU01GAgxw6FGhXBErOp1H.Wee",
+              latitude: -6.175110,
+              longitude: 106.865036,
+            }
+          TransactionDetails: [
+            {
+              id: 1585,
+              TransactionId: 519,
+              VarianId: 1,
+              hargaKetikaOrder: 60000
+              jumlah: 2,
+              Varian: [{jenisCukur: "Potong rambut pria", hargaCukur: 60000}]
+            },
+            {
+              id: 1586,
+              TransactionId: 519,
+              VarianId: 6,
+              hargaKetikaOrder: 200000
+              jumlah: 5,
+              Varian: [{jenisCukur: "Gentleman full package", hargaCukur: 200000}]
+            }
+          ]
+        }
+
+* Error Response:
+
+        Code: 401 UNAUTHORIZED
+        Content: { message : "Invalid Token" }
+
+        Code: 500 INTERNAL ERROR
+        Content: { message : "Internal error" }
+
+
+
 ## POST transaksi:
 membuat transaksi dengan customer dan kangCukur terdekat dan dilengkapi dgn kepemilikan access_token
 
