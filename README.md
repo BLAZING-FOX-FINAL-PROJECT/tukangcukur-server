@@ -17,7 +17,7 @@ routes:
 
         https://tukangcukur.herokuapp.com/verify (GET)
 
-        https://tukangcukur.herokuapp.com/login (POST)
+        https://tukangcukur.herokuapp.com/login/:role (POST)
 
         https://tukangcukur.herokuapp.com/transaksi/ (GET)
         https://tukangcukur.herokuapp.com/transaksi/:id (GET)
@@ -40,7 +40,7 @@ login yang bisa digunakan untuk baik customer maupun kangCukur
 
 * URL Params:
 
-        role='customer'/'tukangcukur'
+        role='customer' || 'tukangcukur'
 
 * Data Params:
 
