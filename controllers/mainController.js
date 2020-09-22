@@ -129,9 +129,9 @@ class MainController {
 
   static async getOngoingTransaksi(req, res, next) {
     try {
-      const id = req.params.id
+      //findOne || findAll?
       const transaction = await Transaction.findOne({
-        where: { id, status:'ongoing' },
+        where: { status:'ongoing' },
         include:[Customer, TukangCukur,{
           model: TransactionDetail,
           order: [['VarianId','ASC']],
