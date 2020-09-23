@@ -1,6 +1,7 @@
 const {Customer, TukangCukur, Transaction, Varian, TransactionDetail}= require("../models")
 const userToken = require('../helpers/jwt')
 const {comparePassword} = require('../helpers/hashPassword')
+const { Op } = require("sequelize");
 
 //mainController's responsible are divided in:
 // -Login Process and sending Token to client
@@ -130,14 +131,31 @@ class MainController {
   static async getOngoingTransaksi(req, res, next) {
     try {
       //findOne || findAll?
-      const transaction = await Transaction.findOne({
-        where: { status:'ongoing' },
-        include:[Customer, TukangCukur,{
-          model: TransactionDetail,
-          order: [['VarianId','ASC']],
-          include: Varian
-      }]})
-      res.status(200).json(transaction)
+      //req.access_id
+      //req.role
+      if (req.role === 'customer') {
+        const transaction = await Transaction.findOne({
+          where: { 
+            [Op.and]: [{ CustomerId:req.access_id }, { status:'ongoing' }]
+           },
+          include:[Customer, TukangCukur,{
+            model: TransactionDetail,
+            order: [['VarianId','ASC']],
+            include: Varian
+        }]})
+        res.status(200).json(transaction)
+      } else if (req.role === 'tukangcukur') {
+        const transaction = await Transaction.findOne({
+          where: { 
+            [Op.and]: [{ TukangCukurId:req.access_id }, { status:'ongoing' }]
+          },
+          include:[Customer, TukangCukur,{
+            model: TransactionDetail,
+            order: [['VarianId','ASC']],
+            include: Varian
+        }]})
+        res.status(200).json(transaction)
+      }
     } catch(error) {
       next({
         status: 500,
