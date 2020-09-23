@@ -32,7 +32,7 @@ class customerController {
 
   static async getCustomer(req, res, next) {
     try {
-      const id = req.params.id;
+      const id = req.params.id || req.access_id;
       const customer = await Customer.findOne({
         where: { id },
       });

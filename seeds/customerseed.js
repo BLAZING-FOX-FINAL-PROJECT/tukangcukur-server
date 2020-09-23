@@ -8,6 +8,14 @@ const seed = [
     password: "rahasia",
     createdAt: new Date(),
     updatedAt: new Date(),
+  },
+  {
+    nama: "Laurentius Edrick",
+    alamat: "jl. Hacktiv no.8",
+    telepon: "0823456789",
+    password: "rahasia",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   }
 ]
 
