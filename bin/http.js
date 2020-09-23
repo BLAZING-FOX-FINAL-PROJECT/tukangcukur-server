@@ -17,9 +17,7 @@ io.on("connection", (socket) => {
   })
 
   socket.on("endTransactionServer", payload => {
-    console.log('masuk server', payload)
-    // io.emit("endTransaction", payload)
-    // io.emit
+    socket.emit("endTransaction", payload)
   })
 
   socket.on("disconnect", () => {
