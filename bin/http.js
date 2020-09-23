@@ -17,7 +17,7 @@ io.on("connection", (socket) => {
   })
 
   socket.on("endTransactionServer", payload => {
-    socket.emit("endTransaction", payload)
+    socket.broadcast.emit("endTransaction", payload)
   })
 
   socket.on("disconnect", () => {
