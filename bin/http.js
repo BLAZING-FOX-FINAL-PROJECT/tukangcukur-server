@@ -20,6 +20,12 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("endTransaction", payload)
   })
 
+  socket.on("startTransactionServer", payload => {
+    socket.broadcast.emit("startTransaction", payload)
+  })
+
+
+
   socket.on("disconnect", () => {
     console.log("Client disconnected");
   });
