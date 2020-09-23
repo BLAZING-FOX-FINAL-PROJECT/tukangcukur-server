@@ -8,6 +8,9 @@ async function matcher(req,res,next) {
     else {
       const {customerLatitude, customerLongitude} = req.body
       const tukangCukurs = await TukangCukur.findAll({where: { status: true }})
+      if (!tukangCukurs.length) res.status(404).json({
+        message: 'Sorry! KangCukur not found!'
+      })
       let distances = tukangCukurs.map(el => {return distance(
         customerLatitude,
         customerLongitude,
