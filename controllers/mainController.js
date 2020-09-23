@@ -56,6 +56,7 @@ class MainController {
   // Checking Token Credential
   static appVerify (req,res,next) {
     res.status(200).json({
+      id: req.access_id,
       role: req.role
     })
   }
