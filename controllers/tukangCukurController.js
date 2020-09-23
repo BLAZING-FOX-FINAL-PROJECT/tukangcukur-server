@@ -43,7 +43,7 @@ class tukangCukurController{
 
   static async getTukangCukur(req, res, next) {
     try {
-      const id = req.params.id
+      const id = req.params.id || req.access_id
       const tukangCukur = await TukangCukur.findOne({
         where: { id },
       })
