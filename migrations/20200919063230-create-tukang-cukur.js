@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       rating: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       status: {
         type: Sequelize.BOOLEAN
