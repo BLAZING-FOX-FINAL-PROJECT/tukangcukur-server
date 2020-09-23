@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     latitude: DataTypes.DOUBLE,
     longitude: DataTypes.DOUBLE,
-    rating: DataTypes.INTEGER,
+    rating: DataTypes.FLOAT,
     status: DataTypes.BOOLEAN
   }, {
     sequelize,
