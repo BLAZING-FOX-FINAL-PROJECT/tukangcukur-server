@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs")
 
 const seed = [
   {
-    nama: "Idaz Anggara",
+    nama: "Customer Idaz",
     alamat: "jl. Hacktiv no.8",
     telepon: "0812345678",
     password: "rahasia",
@@ -10,7 +10,7 @@ const seed = [
     updatedAt: new Date(),
   },
   {
-    nama: "Laurentius Edrick",
+    nama: "Customer Edrick",
     alamat: "jl. Hacktiv no.8",
     telepon: "0823456789",
     password: "rahasia",
