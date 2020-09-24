@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs")
 
 const seed = [
   {
-    nama: "KangCukur H8",
+    nama: "KangCukur H8 KGD",
     telepon: "0811111111",
     urlPhoto: "https://images.unsplash.com/photo-1520338661084-680395057c93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     password: "rahasia",
@@ -14,7 +14,7 @@ const seed = [
     updatedAt: new Date(),
   },
   {
-    nama: "Aris Satya",
+    nama: "KangCukur Jakpus",
     telepon: "0822222222",
     urlPhoto: "https://images.unsplash.com/photo-1520338661084-680395057c93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     password: "rahasia",
@@ -26,7 +26,7 @@ const seed = [
     updatedAt: new Date(),
   },
   {
-    nama: "Laurentius Edrick",
+    nama: "KangCukur Surabaya",
     telepon: "0833333333",
     urlPhoto: "https://images.unsplash.com/photo-1520338661084-680395057c93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     password: "rahasia",
@@ -38,7 +38,7 @@ const seed = [
     updatedAt: new Date(),
   },
   {
-    nama: "Ichlasul Amal",
+    nama: "KangCukur Bandung",
     telepon: "0844444444",
     urlPhoto: "https://images.unsplash.com/photo-1520338661084-680395057c93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     password: "rahasia",
