@@ -91,7 +91,7 @@ class tukangCukurController{
 
   static async patchTukangCukur(req, res, next) {
     try {
-      const id = req.params.id || req.access_id
+      const id = req.params.id
       const {
         status
       } = req.body

@@ -129,47 +129,11 @@ class MainController {
     }
   }
 
-  static async getOngoingTransaksi(req, res, next) {
-    try {
-      //findOne || findAll?
-      //req.access_id
-      //req.role
-      if (req.role === 'customer') {
-        const transaction = await Transaction.findOne({
-          where: { 
-            [Op.and]: [{ CustomerId:req.access_id }, { status:'ongoing' }]
-           },
-          include:[Customer, TukangCukur,{
-            model: TransactionDetail,
-            order: [['VarianId','ASC']],
-            include: Varian
-        }]})
-        res.status(200).json(transaction)
-      } else if (req.role === 'tukangcukur') {
-        const transaction = await Transaction.findOne({
-          where: { 
-            [Op.and]: [{ TukangCukurId:req.access_id }, { status:'ongoing' }]
-          },
-          include:[Customer, TukangCukur,{
-            model: TransactionDetail,
-            order: [['VarianId','ASC']],
-            include: Varian
-        }]})
-        res.status(200).json(transaction)
-      }
-    } catch(error) {
-      next({
-        status: 500,
-        message: "Internal server error"
-      });
-    }
-  }
-
   static async postTransaksi(req,res,next) {
     // req.body: {customerLatitude, customerLongitude, servis: [{jenisCukur: 'string', hargaCukur: int, jumlah: int}]}
     // req.body.tukangCukurId - OPTIONAL if without long/lat
     try {
-      const {servis, customerLatitude, customerLongitude} = req.body
+      const {servis} = req.body
       const TukangCukurId = req.body.TukangCukurId || req.TukangCukurId
       if (!servis || !servis.length) {
         next({
@@ -188,8 +152,6 @@ class MainController {
       const transaction = await Transaction.create({
         CustomerId: req.access_id,
         TukangCukurId,
-        customerLatitude,
-        customerLongitude,
         status: 'ongoing'
       })
       const varian = await Varian.findAll()

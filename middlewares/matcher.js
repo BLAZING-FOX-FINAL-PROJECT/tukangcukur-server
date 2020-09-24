@@ -19,7 +19,6 @@ async function matcher(req,res,next) {
         el.id
       )})
       distances.sort( (dist1,dist2) => dist1.dist-dist2.dist )
-      console.log(distances, "km")
       req.TukangCukurId = distances[0].id
       next()
     }

@@ -206,7 +206,6 @@ describe("CUSTOMER TEST SUITE", () => {
         })
         .end((err, res) => {
           if (err) done(err);
-          console.log(res.body);
           expect(res.status).toBe(400);
           expect(res.body).toBeInstanceOf(Object);
           expect(res.body).toHaveProperty(
@@ -227,7 +226,6 @@ describe("CUSTOMER TEST SUITE", () => {
         })
         .end((err, res) => {
           if (err) done(err);
-          console.log(res.body);
           expect(res.status).toBe(400);
           expect(res.body).toBeInstanceOf(Object);
           expect(res.body).toHaveProperty(

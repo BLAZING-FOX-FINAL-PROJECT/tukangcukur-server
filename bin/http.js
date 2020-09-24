@@ -2,36 +2,36 @@
 
 const app = require("../app.js")
 
-const http = require("http");
-const socketIo = require("socket.io");
-const server = http.createServer(app);
-const io = socketIo(server);
+// const http = require("http");
+// const socketIo = require("socket.io");
+// const server = http.createServer(app);
+// const io = socketIo(server);
 
 const port = process.env.PORT || 3000
 
-io.on("connection", (socket) => {
-  console.log("New client connected");
+// io.on("connection", (socket) => {
+//   console.log("New client connected");
   
-  socket.on("chat", payload => {
-    //payload: {}
-  })
+//   socket.on("chat", payload => {
+//     //payload: {}
+//   })
 
-  socket.on("endTransactionServer", payload => {
-    socket.broadcast.emit("endTransaction", payload)
-  })
+//   socket.on("endTransactionServer", payload => {
+//     socket.broadcast.emit("endTransaction", payload)
+//   })
 
-  socket.on("startTransactionServer", payload => {
-    socket.broadcast.emit("startTransaction", payload)
-  })
+//   socket.on("startTransactionServer", payload => {
+//     socket.broadcast.emit("startTransaction", payload)
+//   })
 
 
 
-  socket.on("disconnect", () => {
-    console.log("Client disconnected");
-  });
-});
+//   socket.on("disconnect", () => {
+//     console.log("Client disconnected");
+//   });
+// });
 
-server.listen(port, ()=>{console.log('nyala:' + port)})
+app.listen(port, ()=>{console.log('nyala:' + port)})
 
 // let interval;
 

@@ -3,11 +3,8 @@
 const router = require('express').Router()
 
 const customerController = require('../controllers/customerController')
-const {authenticate} = require('../middlewares/auth')
 
-
-router.get('/all', customerController.getCustomers)
-router.get('/', authenticate, customerController.getCustomer)
+router.get('/', customerController.getCustomers)
 router.post('/', customerController.postCustomer)
 router.get('/:id', customerController.getCustomer)
 router.put('/:id', customerController.putCustomer)

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test npx jest --verbose --runInBand --detectOpenHandles --coverage --forceExit",
+    "test": "(SET NODE_ENV=test) && npx jest --verbose --runInBand --detectOpenHandles --coverage --forceExit",
     "dev": "nodemon bin/http.js -q",
     "start": "node bin/http.js"
   },
