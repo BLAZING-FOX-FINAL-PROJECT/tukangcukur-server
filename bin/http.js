@@ -17,11 +17,12 @@ io.on("connection", (socket) => {
   })
 
   socket.on("endTransactionServer", payload => {
-    socket.broadcast.emit("endTransaction", payload)
+    socket.emit("endTransaction", payload)
   })
 
   socket.on("startTransactionServer", payload => {
-    socket.broadcast.emit("startTransaction", payload)
+    console.log("<<<<<<<<<<<<<<<")
+    socket.emit("startTransaction", payload)
   })
 
 
