@@ -1,5 +1,7 @@
 # tukangcukur-server
 
+===OUTDATED - ASK LAURENTIUS FOR ENQUIRIES===
+
 routes:
 
         https://tukangcukur.herokuapp.com/customer/ (GET)
